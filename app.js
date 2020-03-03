@@ -89,4 +89,14 @@ deleteBtn.classList.add('delete');
   li.appendChild(bookName);
   li.appendChild(deleteBtn);
   list.appendChild(li);
+});
+
+// Hide books
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change', e => {
+  if (hideBox.checked) {
+    list.style.display='none';
+  } else {
+    list.style.display='initial';
+  }
 })
