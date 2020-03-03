@@ -35,7 +35,7 @@ console.log(bookList.nextElementSibling);
 console.log(bookList.previousElementSibling);
 
 bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool for school.'
-*/
+
 
 const btns = document.querySelectorAll('#book-list .delete');
 
@@ -51,4 +51,16 @@ const link = document.querySelector('#page-banner a');
 link.addEventListener('click', e => {
   e.preventDefault();
   console.log('Navigation to', e.target.textContent, 'was prevented')
-})
+});
+*/
+
+
+//Delete books
+const list = document.querySelector('#book-list ul');
+ list.addEventListener('click', e => {
+   if(e.target.className === 'delete') {
+     const li = e.target.parentElement;
+     list.removeChild(li);
+   }
+ });
+
