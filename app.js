@@ -22,8 +22,16 @@ console.log(clonedBanner);
 
 const bookList = document.querySelector('#book-list');
 
+/*
 console.log(bookList.parentNode);
 console.log(bookList.parentElement.parentElement);
 
 console.log(bookList.childNodes); // Includes line breaks, is NodeList
 console.log(bookList.children); // Doesn't include line breaks, is HTMLCollection
+*/
+
+console.log(bookList.nextSibling); // Is a line break
+console.log(bookList.nextElementSibling);
+console.log(bookList.previousElementSibling);
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool for school.'
