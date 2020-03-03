@@ -113,5 +113,21 @@ searchBar.addEventListener('keyup', e => {
     } else {
       book.style.display = 'none';
     }
-  })
+  });
+});
+
+// Tabbed content
+const tabs = document.querySelector('.tabs');
+const panels = document.querySelectorAll('.panel');
+tabs.addEventListener('click', e => {
+  if(e.target.tagName === 'LI') { // 'LI' has to be upper case to work - tagName returns an uppercase value for some reason
+    const targetPanel = document.querySelector(e.target.dataset.target);
+    panels.forEach(panel => {
+      if (panel === targetPanel) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    })
+  }
 })
