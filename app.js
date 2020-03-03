@@ -1,3 +1,4 @@
+/*
 let books = document.querySelectorAll('#book-list li .name'); //Selects multiple elements
 //console.log(books);
 
@@ -17,3 +18,12 @@ console.log(banner.hasChildNodes());
 
 const clonedBanner = banner.cloneNode(true);
 console.log(clonedBanner);
+*/
+
+const bookList = document.querySelector('#book-list');
+
+console.log(bookList.parentNode);
+console.log(bookList.parentElement.parentElement);
+
+console.log(bookList.childNodes); // Includes line breaks, is NodeList
+console.log(bookList.children); // Doesn't include line breaks, is HTMLCollection
