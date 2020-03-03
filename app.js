@@ -69,7 +69,24 @@ list.addEventListener('click', e => {
 const addForm = document.forms['add-book'];
 
 addForm.addEventListener('submit', e => {
-  e.preventDefault();
+  e.preventDefault(); // Prevents page reloading
   const value = addForm.querySelector('input[type="text"]').value;
-  console.log(value);
+  
+  // Create element
+  const li = document.createElement('li');
+  const bookName = document.createElement('span');
+  const deleteBtn = document.createElement('span');
+
+  // Add content
+  deleteBtn.textContent = 'delete';
+  bookName.textContent = value;
+
+  // Add classes
+bookName.classList.add('name');
+deleteBtn.classList.add('delete');
+
+  // Append to document
+  li.appendChild(bookName);
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
 })
